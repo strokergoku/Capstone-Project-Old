@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://d1ohq1877rnsf"]
+
+[ext_resource type="Script" uid="uid://dauspsbvcm2th" path="res://assets/scripts/character/prototypeCharacterMainScript.gd" id="1_urnq7"]
+[ext_resource type="Script" uid="uid://452i7rpl87h1" path="res://assets/scripts/character/prototypeCharacterCamera.gd" id="2_altsg"]
+[ext_resource type="Script" uid="uid://dc6kwi21abdo4" path="res://assets/scripts/character/LeftPlayerFist.gd" id="3_ikjfk"]
+[ext_resource type="Script" uid="uid://8jrnlvsetu5t" path="res://assets/scripts/character/RightPlayerFist.gd" id="4_urnq7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ugb82"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6vn6g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p3sm"]
+bg_color = Color(0.45622247, 0.032446247, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.17912039, 0.35513967, 0.17362723, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vbu5"]
+bg_color = Color(0.45490196, 0.03137255, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.18039216, 0.35686275, 0.17254902, 1)
+border_blend = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_48hy0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0h5ep"]
+
+[node name="protoChar" type="CharacterBody3D" unique_id=891540803 node_paths=PackedStringArray("health_bar", "fistLeft", "fistRight")]
+script = ExtResource("1_urnq7")
+health_bar = NodePath("canvasLayerPCHP/healthBarPC")
+fistLeft = NodePath("FistLeft")
+fistRight = NodePath("FistRight")
+
+[node name="protoCharHitbox" type="CollisionShape3D" parent="." unique_id=1647153963]
+unique_name_in_owner = true
+shape = SubResource("CapsuleShape3D_ugb82")
+
+[node name="protoCharMesh" type="MeshInstance3D" parent="." unique_id=1752448900]
+mesh = SubResource("CapsuleMesh_6vn6g")
+
+[node name="protoCharCamNode" type="Node3D" parent="." unique_id=970938986 node_paths=PackedStringArray("character")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19999981, 1.4209267, 0.89699316)
+script = ExtResource("2_altsg")
+character = NodePath("..")
+
+[node name="cameraPC3D" type="Camera3D" parent="protoCharCamNode" unique_id=1681092427]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0.044511616, -0.12539554, 4.6622105)
+fov = 65.0
+
+[node name="canvasLayerPCHP" type="CanvasLayer" parent="." unique_id=1426580076]
+
+[node name="healthBarPC" type="ProgressBar" parent="canvasLayerPCHP" unique_id=515200378]
+custom_minimum_size = Vector2(500, 50)
+custom_maximum_size = Vector2(500, 50)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "HP"
+theme_override_font_sizes/font_size = 25
+theme_override_styles/background = SubResource("StyleBoxFlat_7p3sm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4vbu5")
+step = 0.5
+value = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="canvasLayerPCHP" unique_id=1618486258]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FistLeft" type="Area3D" parent="." unique_id=1132818763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31429356, -0.3, -0.73658836)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_ikjfk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FistLeft" unique_id=1717287387]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.20000005, 0, 0)
+shape = SubResource("SphereShape3D_48hy0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FistLeft/CollisionShape3D" unique_id=1575651264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4901161e-08, 0)
+mesh = SubResource("SphereMesh_0h5ep")
+
+[node name="FistRight" type="Area3D" parent="." unique_id=1450529753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78570646, -0.3, -0.73658836)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_urnq7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FistRight" unique_id=132074339]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.20000005, 0, 0)
+shape = SubResource("SphereShape3D_48hy0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FistRight/CollisionShape3D" unique_id=1929123900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0, 0)
+mesh = SubResource("SphereMesh_0h5ep")

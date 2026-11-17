@@ -1,0 +1,160 @@
+extends CharacterBody3D
+
+#var player = null
+
+#@export var player_path : NodePath
+@export var player: CharacterBody3D
+
+#Adds the variable health bar as a progress bar. This allows me to add
+#A health bar to the character.
+@export var healthBarPC: ProgressBar 
+
+@export var detectionDistance := 15.0
+@export var loseDistance := 20.0
+@export var movementSpeed := 5.0
+@export var lookSpeed := 1.5
+
+var isChasing := false
+var lineOfSight := 0.0
+var lineOfDirection := 1.0
+
+@onready var navAgent: NavigationAgent3D = $EnemyNavAgent
+@onready var headVisionPoint: Node3D = $HeadVisionPoint
+
+#Adds the variable max health (the maximum health of the player),
+#which, by the way, is also determined by the maximum of the progress
+#bar; and the variable current health, which will change over time.
+var maxHealth: float = 100.0
+var currentHealth: float = 100.0
+
+var stunned: bool = false
+
+#On start of game and ready of game, if the health bar is active, then
+#the progress bar's max value becomes the max health variable float.
+#One the start of game and ready of game, if the health bar is active,
+#then the progress bar's current value becomes the current health 
+#that the player will start with. This is equivalent to resetting the
+#Health bar on game restart and start. This is also a somewhat helpful
+#Script for if we decide to add health powerups and debuffs into the
+#Game.
+func _ready() -> void:
+	#player = get_node(player_path)
+	if healthBarPC:
+		healthBarPC.max_value = maxHealth
+		healthBarPC.value = currentHealth
+
+#The take damage function, which is fed in float values. When it is
+#called, such as by an enemy, current health will go down by the
+#amount given by said enemy. The current health = clamp function checks 
+#the current health, and makes sure it never goes below 0 or the 
+#maximum health value. Therefore, at 0 hp, you die. it is important to 
+#note we can seperate projectiles, melees and bump-into's from each
+#as different damager's with different amounts of damage.
+func take_damage(amount: float) -> void:
+	currentHealth -= amount
+	currentHealth = clamp(currentHealth, 0, maxHealth)
+	
+	#If health bar is active, then update it's value to current health.
+	if healthBarPC:
+		healthBarPC.value = currentHealth
+		
+		#Stop the enemy from moving immediately as a stun effect for the
+		#damage taken. This makes the damage feel more real!
+		velocity.x = 0
+		velocity.z = 0
+		
+		#Stun the enemy for 1 second.
+		stunned = true
+		await get_tree().create_timer(0.5).timeout
+		stunned = false
+
+func lookAround(delta):
+	lineOfSight += lookSpeed * lineOfDirection * delta
+	
+	if lineOfSight >= PI / 2:
+		lineOfSight = PI / 2
+		lineOfDirection = -1.0
+		
+	elif lineOfSight <= -PI / 2:
+		lineOfSight = -PI / 2
+		lineOfDirection = 1.0
+		
+		
+	headVisionPoint.rotation.y = lineOfSight
+
+func chasePlayer():
+	var distance = global_position.distance_to(player.global_position)
+	
+	if distance > loseDistance:
+		isChasing = false
+		velocity = Vector3.ZERO
+		return
+	
+	navAgent.target_position = player.global_position
+	
+	var nextPosition = navAgent.get_next_path_position()
+	
+	var direction = global_position.direction_to(nextPosition)
+	
+	velocity = direction * movementSpeed
+		
+func wallCheck() -> bool:
+	var start = headVisionPoint.global_position
+	var end = player.global_position
+	
+	var query = PhysicsRayQueryParameters3D.create(
+		start,
+		end
+	)
+	
+	query.exclude = [self]
+	
+	var result = get_world_3d().direct_space_state.intersect_ray(query)
+	
+	if result.is_empty():
+		return false
+		
+	return result.collider == player
+	
+func checkForPlayer():
+	var distance = global_position.distance_to(player.global_position)
+	
+	if distance > detectionDistance:
+		return
+	
+	var directionToPlayer: Vector3 = (
+		player.global_position - headVisionPoint.global_position
+	).normalized()
+	
+	var forward: Vector3 = -headVisionPoint.global_transform.basis.z.normalized()
+		
+	var dot: float = forward.dot(directionToPlayer)
+	
+	if dot > 0.0:
+		isChasing = true
+		
+	if not wallCheck():
+		return
+	
+	isChasing = true
+		
+func _physics_process(delta):
+	lookAround(delta)
+	
+	if isChasing:
+		chasePlayer()
+	else:
+		checkForPlayer()
+
+	if stunned:
+		#this sets the enemy's horizontal movement to 0 so it cannot
+		#move.
+		velocity.x = 0
+		velocity.z = 0 
+		move_and_slide()
+		return
+		
+	velocity = Vector3.ZERO
+	
+	
+	

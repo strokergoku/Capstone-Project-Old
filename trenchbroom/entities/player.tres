@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://siv6f01n7dn3"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_nallm"]
+[ext_resource type="PackedScene" uid="uid://cpqfxvm8pjs0s" path="res://Characters/modeled dude/dude.tscn" id="2_nallm"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="3_op7sw"]
+
+[resource]
+script = ExtResource("3_op7sw")
+scene_file = ExtResource("2_nallm")
+classname = "player"
+description = "the little bean dude that can double jump"
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

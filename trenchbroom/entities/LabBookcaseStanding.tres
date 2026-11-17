@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://cm2deb8rvwrb5"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_qborh"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_2jpkm"]
+[ext_resource type="PackedScene" uid="uid://mi88c773k8jb" path="res://assets/3dAssetScenes/labBookcaseStanding.tscn" id="2_ujidh"]
+
+[resource]
+script = ExtResource("2_2jpkm")
+scene_file = ExtResource("2_ujidh")
+classname = "bookcaseStanding"
+description = "the lab bookcase, but standing."
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

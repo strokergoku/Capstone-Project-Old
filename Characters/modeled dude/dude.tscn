@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cpqfxvm8pjs0s"]
+
+[ext_resource type="ArrayMesh" uid="uid://qmlghcwhlntd" path="res://Characters/modeled dude/meshes/protomodelMergedMesh_Sphere_002.res" id="2_w46ua"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pg56h"]
+height = 2.048706
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2qkb"]
+bg_color = Color(0.45622247, 0.032446247, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.17912039, 0.35513967, 0.17362723, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35n12"]
+bg_color = Color(0.45490196, 0.03137255, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.18039216, 0.35686275, 0.17254902, 1)
+border_blend = true
+
+[node name="dude" type="CharacterBody3D" unique_id=121158396]
+
+[node name="playerModel" type="MeshInstance3D" parent="." unique_id=840727795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9205829, 0)
+mesh = ExtResource("2_w46ua")
+
+[node name="playerHitbox" type="CollisionShape3D" parent="." unique_id=2135249937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99139404, 0)
+shape = SubResource("CapsuleShape3D_pg56h")
+debug_color = Color(0.99215686, 0, 0.2784314, 1)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1276599079]
+
+[node name="canvasLayerPCHP" type="CanvasLayer" parent="." unique_id=1010831335]
+
+[node name="healthBarPC" type="ProgressBar" parent="canvasLayerPCHP" unique_id=1254662059]
+custom_minimum_size = Vector2(500, 50)
+custom_maximum_size = Vector2(500, 50)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "HP"
+theme_override_font_sizes/font_size = 25
+theme_override_styles/background = SubResource("StyleBoxFlat_x2qkb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_35n12")
+step = 0.5
+value = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="canvasLayerPCHP" unique_id=1431077314]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1315449517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216167, 1.8836064)
+
+[node name="CameraPivot" type="Node3D" parent="CameraRig" unique_id=980697851]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig/CameraPivot" unique_id=1828750491]
+spring_length = 4.5
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/CameraPivot/SpringArm3D" unique_id=245211881]
+current = true
+fov = 60.0

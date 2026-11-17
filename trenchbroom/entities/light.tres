@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://djmnrcdppgns1"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_eg8iq"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_awesn"]
+[ext_resource type="PackedScene" uid="uid://b7ye7ydxmeuba" path="res://scenes/test scenes/light test.tscn" id="2_mhs73"]
+
+[resource]
+script = ExtResource("2_awesn")
+scene_file = ExtResource("2_mhs73")
+classname = "light"
+description = "light"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"light.glb\""
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

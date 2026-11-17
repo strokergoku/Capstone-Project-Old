@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bhkea2pcovvst"]
+
+[ext_resource type="ArrayMesh" uid="uid://pm1h34lgfe7f" path="res://assets/3dAssetFiles/more meshes/office scene stuff/bookcase.res" id="1_ilmu0"]
+[ext_resource type="ArrayMesh" uid="uid://dlbqddhdkjtw6" path="res://assets/3dAssetFiles/more meshes/computers/old-computer_document thing.res" id="2_oqkwp"]
+
+[node name="LabBookcaseStanding" type="Node3D" unique_id=317021239]
+transform = Transform3D(1, 0, 0, 0, 0.90630776, -0.42261827, 0, 0.42261827, 0.90630776, 0, 0, 0)
+
+[node name="bookcase" type="MeshInstance3D" parent="." unique_id=442932031]
+transform = Transform3D(0.21949464, 0, 0, 0, 0.16622731, 0, 0, 0, 0.20877798, 6.246567e-05, 0, -0.005954236)
+mesh = ExtResource("1_ilmu0")
+
+[node name="documents" type="MeshInstance3D" parent="." unique_id=295763256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20272893, 1.4978843, -0.7982534)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents" unique_id=1423649673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008418024, -0.003014207, 0.15482831)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents" unique_id=394947813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008418024, -0.003014207, 0.15482831)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents/documents" unique_id=462532626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008418024, -0.003014207, 0.15482831)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents/documents/documents" unique_id=597228691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008418024, -0.003014207, 0.15482831)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents/documents/documents/documents" unique_id=2030087480]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.008418024, 0.09150696, 0.08320585)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents/documents/documents/documents/documents" unique_id=437401493]
+transform = Transform3D(0.99999875, 0.001588789, -6.938894e-18, 0.0012082752, -0.7604998, 0.64933705, 0.0010316598, -0.6493362, -0.7605007, 0.008418024, 0.7349595, 0.03299606)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents/documents/documents/documents/documents/documents" unique_id=29195074]
+transform = Transform3D(0.99999815, 0.0018033618, 0.0004254122, -0.0016236592, 0.9635003, -0.26770326, -0.00089265045, 0.2677021, 0.9635011, 0.009811118, -0.14186919, 0.111744165)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents3" type="MeshInstance3D" parent="documents" unique_id=1457896312]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.16063881, 0.6301985, -0.060821533)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents3" unique_id=469706926]
+transform = Transform3D(0.99999875, 0.001588789, -6.938894e-18, 0.0012082752, -0.7604998, 0.64933705, 0.0010316598, -0.6493362, -0.7605007, 0.008418024, 0.7349595, 0.019276738)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents3/documents" unique_id=14455853]
+transform = Transform3D(0.9999981, 0.0018033618, 0.00042541214, -0.0016236593, 0.9635003, -0.26770326, -0.00089265045, 0.2677021, 0.9635011, 0.0098053515, -0.13823533, 0.116000175)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents2" type="MeshInstance3D" parent="documents" unique_id=179476865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20272893, 0.5507479, 0.97748476)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents2" unique_id=145418393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008418024, -0.003014207, 0.15482831)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents2/documents" unique_id=505550214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008418024, -0.003014207, 0.15482831)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents2/documents/documents" unique_id=210704826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008418024, -0.003014207, 0.15482831)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents" type="MeshInstance3D" parent="documents/documents2/documents/documents/documents" unique_id=1909291962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008418024, -0.003014207, 0.15482831)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents2" type="MeshInstance3D" parent="." unique_id=536358188]
+transform = Transform3D(1, 0, 0, 0, -2.9802322e-08, -1.0000001, 0, 1.0000001, -2.9802322e-08, -0.15461314, 2.65315, 0.0055724382)
+mesh = ExtResource("2_oqkwp")
+
+[node name="documents2" type="MeshInstance3D" parent="documents2" unique_id=1291572381]
+transform = Transform3D(1, 0, 0, 0, -0.92597646, 0.37758106, 0, -0.37758106, -0.92597646, 0.008418024, 0.8533406, 0.0009021759)
+mesh = ExtResource("2_oqkwp")

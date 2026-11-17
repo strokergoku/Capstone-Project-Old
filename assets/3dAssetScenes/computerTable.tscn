@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cqy8hkt2tgqe2"]
+
+[ext_resource type="ArrayMesh" uid="uid://bxqcihpghos3t" path="res://assets/3dAssetFiles/more meshes/computers/old-computer_table.res" id="1_dxghb"]
+[ext_resource type="ArrayMesh" uid="uid://da2yss61gu684" path="res://assets/3dAssetFiles/more meshes/computers/old-computer_computer.res" id="2_70l3c"]
+[ext_resource type="ArrayMesh" uid="uid://bsschq56a6y" path="res://assets/3dAssetFiles/more meshes/computers/old-computer_computer_keybord.res" id="3_bic8c"]
+[ext_resource type="ArrayMesh" uid="uid://b248n15505amv" path="res://assets/3dAssetFiles/more meshes/computers/old-computer_computer_mouse_002.res" id="4_djhh0"]
+
+[node name="ComputerTable" type="Node3D" unique_id=1604226281]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1366705736]
+transform = Transform3D(1.4568641, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("1_dxghb")
+
+[node name="computer monitor" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1473954137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20298262, 0.92326486, -0.2163645)
+mesh = ExtResource("2_70l3c")
+
+[node name="computer keyboard" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1739071159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4794727, 0.92326486, 0.34283483)
+mesh = ExtResource("3_bic8c")
+
+[node name="computer mouse" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1202259739]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.20365153, 0.92326486, 0.5087745)
+mesh = ExtResource("4_djhh0")

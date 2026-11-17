@@ -1,0 +1,14 @@
+need to finish the stun enemy script for the damage system (✅)
+
+made a quickstep system, a doublejump system (✅)
+
+need to make a groundpound script ( )
+
+need to make slowdown events where time slows down instead of time
+remaining steadypaced while different things happen. ( )
+
+need to make camera spring arm actually work so that camera does not
+collide through walls. While it may seem like it is not very important,
+it will be very helpful for the player experience and the fighting
+experience as it is hard to use the camera when it goes through walls,
+and can quite annoying. ( )

@@ -1,0 +1,42 @@
+Here is a reference to all the different attacks and hitboxes that the 
+player will have, and how they can combo. I am using some of the ideas 
+from the google  slide, as well as some of my own ideas:
+	
+First Off, I am thinking of having 3 seperate fighting styles.
+	Fighting Style 1: The Hummingbird
+		This is a special style that can be unlocked after beating the
+		game and restarting on master mode. It gives a little bit more
+		of a challenge to the game. 
+			Hitboxes:
+				1. Left & Right Player Fist - Humming Fist - Left Click
+					* Used for lightning fast punches. Extremely fast, 
+					can be combo'd into a sideswing punch.
+				2. Right Player Fist - Sideswing Punch - Right Click
+					* Used for combos.
+				3. Right Leg - Slice Kick - Keyboard_R
+					* Used for combos and light damage, stuns for a second
+					in a combo.
+				4. Left Leg - Double Kick - Keyboard_E
+					* Used for heavy knockback and ground stun on non-bosses
+				5. Both Legs - Ground Pound - Keyboard_F
+					* Used for double jump teching and dodge teching, stuns
+					in area of effect.
+					
+	Fighting Style 2: The Human
+		This is the normal fighting style of the game.
+				1. Left Player Fist - Light Attack - Left Click 
+				2. Right Player Fist - Heavy Attack - Left Click
+				3. Right Leg - Slice Kick (Medium Attack) - Keyboard_R
+				4. Both Legs - Ground Pound - Keyboard_F
+				
+	Fighting Style 3: Superhuman Strength
+		This is a fighting style unlocked somewhere in the middle of the
+		game, potentially it could be locked behind going through the levels
+		because of something like "the researchers are trying to figure out
+		more about what's going on with you, so they don't want you to take
+		any risks using your superhuman strength yet."
+			1. Left Player Fist & Right Player Fist - Light Attack - Left Click
+			2. Right Player Fist - Grab/Throw (after timer) - Right Click
+			3. Both Legs - Ground Pound - Keyboard_F
+			4. Heat Action - Beast Unleashed - Keyboard_Q
+			5. Both Legs while in air - Piercing Impact Kick (Heavy Mini Heat Attack) - Keyboard_E

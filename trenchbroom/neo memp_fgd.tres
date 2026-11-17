@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" format=3 uid="uid://bbtepabe7x420"]
+
+[ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_bb85e"]
+[ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_o73sp"]
+[ext_resource type="Resource" uid="uid://siv6f01n7dn3" path="res://trenchbroom/entities/player.tres" id="2_b266t"]
+[ext_resource type="Resource" uid="uid://djmnrcdppgns1" path="res://trenchbroom/entities/light.tres" id="4_avfwq"]
+[ext_resource type="Resource" uid="uid://cm7o7c2xghyew" path="res://trenchbroom/entities/sunlight.tres" id="5_qvgj7"]
+[ext_resource type="Resource" uid="uid://crd7qs17o6v4a" path="res://trenchbroom/entities/enemy.tres" id="6_e6plc"]
+[ext_resource type="Resource" uid="uid://bb831o3kdg6bb" path="res://trenchbroom/entities/irondoor.tres" id="6_kamsc"]
+[ext_resource type="Resource" uid="uid://bnk2wukqekn4r" path="res://trenchbroom/entities/computerTable.tres" id="7_e6plc"]
+[ext_resource type="Resource" uid="uid://cm2deb8rvwrb5" path="res://trenchbroom/entities/LabBookcaseStanding.tres" id="8_nvua7"]
+
+[resource]
+script = ExtResource("1_o73sp")
+fgd_name = "neo memp"
+base_fgd_files = Array[Resource]([ExtResource("1_bb85e")])
+entity_definitions = Array[Resource]([ExtResource("2_b266t"), ExtResource("4_avfwq"), ExtResource("5_qvgj7"), ExtResource("6_kamsc"), ExtResource("6_e6plc"), ExtResource("7_e6plc"), ExtResource("8_nvua7")])
+metadata/_custom_type_script = "uid://drlmgulwbjwqu"

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5d0x81uv5iin"]
+
+[ext_resource type="Script" uid="uid://chbnni6gq8fdk" path="res://FullGame/cameraRig.gd" id="1_204hd"]
+
+[node name="CameraRig" type="Node3D" unique_id=836716504]
+
+[node name="cameraPivot" type="Node3D" parent="." unique_id=1826868873]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="cameraPivot" unique_id=79757427]
+spring_length = 4.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="cameraPivot/SpringArm3D" unique_id=808810390]
+current = true
+fov = 60.0
+script = ExtResource("1_204hd")

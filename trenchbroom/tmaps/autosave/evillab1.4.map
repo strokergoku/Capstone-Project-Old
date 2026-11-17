@@ -1,0 +1,81 @@
+// Game: neo memp
+// Format: Valve
+// Generator: TrenchBroom 2026.2 (Build v2026.2 Release Win64)
+// entity 0
+{
+"mapversion" "220"
+"wad" ""
+"classname" "worldspawn"
+// brush 0
+{
+( -384 -384 -64 ) ( -384 -374.875 -64 ) ( -384 -384 -61.5 ) "test texture/20260828_142802" [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -384 -384 -64 ) ( -384 -384 -61.5 ) ( -378 -384 -64 ) "test texture/20260828_142802" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -384 -384 -64 ) ( -378 -384 -64 ) ( -384 -374.875 -64 ) "test texture/20260828_142802" [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 384 784 16 ) ( 384 793.125 16 ) ( 390 784 16 ) "test texture/20260828_142802" [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 384 784 16 ) ( 390 784 16 ) ( 384 784 18.500000000000007 ) "test texture/20260828_142802" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 384 784 16 ) ( 384 784 18.500000000000007 ) ( 384 793.125 16 ) "test texture/20260828_142802" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 1
+{
+( -388 -372.5 16 ) ( -388 -371.7941176470588 16 ) ( -388 -372.5 26 ) "test texture/LabTilesLessCracked" [ 0 -1 0 0 ] [ -0 -0 -1 0 ] 0 0.1 0.1
+( -388 -372.5 16 ) ( -388 -372.5 26 ) ( -380 -372.5 16 ) "test texture/LabTilesLessCracked" [ 1 0 -0 0 ] [ 0 -0 -1 0 ] 0 0.1 0.1
+( -388 -372.5 16 ) ( -380 -372.5 16 ) ( -388 -371.7941176470588 16 ) "test texture/LabTilesLessCracked" [ -1 0 0 0 ] [ -0 -1 -0 0 ] 0 0.1 0.1
+( 380 -327.3235294117655 176 ) ( 380 -326.6176470588244 176 ) ( 388 -327.3235294117655 176 ) "test texture/LabTilesLessCracked" [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.1 0.1
+( 380 -327.3235294117655 176 ) ( 388 -327.3235294117655 176 ) ( 380 -327.3235294117655 186 ) "test texture/LabTilesLessCracked" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 0.1 0.1
+( 380 -327.3235294117655 176 ) ( 380 -327.3235294117655 186 ) ( 380 -326.6176470588244 176 ) "test texture/LabTilesLessCracked" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 0.1 0.1
+}
+}
+// entity 1
+{
+"classname" "player"
+"origin" "-8 -56 14.5"
+}
+// entity 2
+{
+"classname" "enemy"
+"origin" "56 648 56"
+}
+// entity 3
+{
+"classname" "irondoor"
+"origin" "-24 -328 12"
+"angle" "90"
+}
+// entity 4
+{
+"classname" "computerTable"
+"origin" "-109.5 -306.5 16"
+"angle" "-90"
+}
+// entity 5
+{
+"classname" "computerTable"
+"origin" "254 -303.324 24"
+"angle" "-90"
+}
+// entity 6
+{
+"classname" "computerTable"
+"origin" "328 -88 24"
+}
+// entity 7
+{
+"classname" "computerTable"
+"origin" "328 40 24"
+}
+// entity 8
+{
+"classname" "computerTable"
+"origin" "328 -216 24"
+}
+// entity 9
+{
+"classname" "computerTable"
+"origin" "114 -306.5 16"
+"angle" "-90"
+}
+// entity 10
+{
+"classname" "bookcaseStanding"
+"origin" "-120 -232 24"
+}

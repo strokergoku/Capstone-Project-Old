@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://cm7o7c2xghyew"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_xsr34"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_21yim"]
+
+[resource]
+script = ExtResource("2_21yim")
+classname = "sunlight"
+description = "big light"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"sunlight.glb\""
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

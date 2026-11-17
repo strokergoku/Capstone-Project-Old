@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://4ef0nteamler"]
+
+[ext_resource type="Texture2D" uid="uid://dwi77wlit15oy" path="res://assets/dumb proto stuff/kenney_prototype-textures/PNG/Dark/texture_01.png" id="1_s1kaf"]
+[ext_resource type="PackedScene" uid="uid://d1ohq1877rnsf" path="res://Characters/editable_char/prototypeCharacter.tscn" id="2_1bp75"]
+[ext_resource type="PackedScene" uid="uid://bygwgi7a15ft1" path="res://Characters/enemy/protoEnemy.tscn" id="3_s1kaf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ugb82"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_6vn6g"]
+sky_material = SubResource("ProceduralSkyMaterial_ugb82")
+
+[sub_resource type="Environment" id="Environment_fjiih"]
+background_mode = 2
+sky = SubResource("Sky_6vn6g")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj08v"]
+albedo_texture = ExtResource("1_s1kaf")
+uv1_triplanar = true
+
+[node name="prototypeMap" type="Node3D" unique_id=695657855]
+
+[node name="ProtoWorldEnv" type="WorldEnvironment" parent="." unique_id=897699098]
+environment = SubResource("Environment_fjiih")
+
+[node name="boxCombinerProto" type="CSGCombiner3D" parent="." unique_id=917094535]
+use_collision = true
+
+[node name="worldBox1" type="CSGBox3D" parent="boxCombinerProto" unique_id=195953230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0456054, 0)
+size = Vector3(50, 4.141211, 15)
+material = SubResource("StandardMaterial3D_mj08v")
+
+[node name="worldBox2" type="CSGBox3D" parent="boxCombinerProto" unique_id=1078556617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029990077, 2.2174335, 0.07392764)
+operation = 2
+size = Vector3(49, 4.203589, 14)
+material = SubResource("StandardMaterial3D_mj08v")
+
+[node name="EnemyFollow" parent="." unique_id=474558946 instance=ExtResource("3_s1kaf")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976455, -3.5450413)
+
+[node name="protoChar" parent="." unique_id=891540803 instance=ExtResource("2_1bp75")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16134, 0)

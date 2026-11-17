@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dngwdicip51nl"]
+
+[ext_resource type="Texture2D" uid="uid://bfr2tx7aubnso" path="res://trenchbroom/textures/RISE_AND_ROCK_Cover.png" id="1_xwuc7"]
+
+[resource]
+albedo_texture = ExtResource("1_xwuc7")
+metallic_specular = 0.0
+texture_filter = 2

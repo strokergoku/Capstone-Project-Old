@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://b5hcxyyqc5cnm"
+path="res://.godot/imported/StartingLabArea.1.map-852dd82608a5f038ee0f2c1e2c4b4272.tres"
+
+[deps]
+
+source_file="res://trenchbroom/tmaps/autosave/StartingLabArea.1.map"
+dest_files=["res://.godot/imported/StartingLabArea.1.map-852dd82608a5f038ee0f2c1e2c4b4272.tres"]
+
+[params]
+

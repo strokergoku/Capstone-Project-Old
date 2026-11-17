@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://d1crspybw1kdl"
+path="res://.godot/imported/evillab1.3.map-69f2b19738c79f3ff8915c24f532136b.tres"
+
+[deps]
+
+source_file="res://trenchbroom/tmaps/autosave/evillab1.3.map"
+dest_files=["res://.godot/imported/evillab1.3.map-69f2b19738c79f3ff8915c24f532136b.tres"]
+
+[params]
+

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bygwgi7a15ft1"]
+
+[ext_resource type="Script" uid="uid://c5h75iwbau56m" path="res://assets/scripts/enemies/basicEnemy/protoEnemyScript.gd" id="1_vrj30"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_04x5q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jiwqk"]
+albedo_color = Color(0.9423665, 0, 0.1815269, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ugb82"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_jiwqk")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d4xsi"]
+viewport_path = NodePath("EnemySprite3D/EnemySubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04x5q"]
+bg_color = Color(0.45622247, 0.032446247, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.17912039, 0.35513967, 0.17362723, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtf75"]
+bg_color = Color(0.45490196, 0.03137255, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.18039216, 0.35686275, 0.17254902, 1)
+border_blend = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jpwbm"]
+radius = 0.501
+
+[node name="EnemyFollow" type="CharacterBody3D" unique_id=474558946 node_paths=PackedStringArray("healthBarPC")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_vrj30")
+healthBarPC = NodePath("EnemySprite3D/EnemySubViewport/EnemyHPbar")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=101089048]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, -0.3, 0)
+shape = SubResource("SphereShape3D_04x5q")
+
+[node name="PrEnMesh3D" type="MeshInstance3D" parent="." unique_id=1966948473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.319, 0)
+mesh = SubResource("SphereMesh_ugb82")
+
+[node name="EnemySprite3D" type="Sprite3D" parent="." unique_id=1559200442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_d4xsi")
+
+[node name="EnemySubViewport" type="SubViewport" parent="EnemySprite3D" unique_id=1006296905]
+transparent_bg = true
+size = Vector2i(200, 20)
+render_target_update_mode = 4
+
+[node name="EnemyHPbar" type="ProgressBar" parent="EnemySprite3D/EnemySubViewport" unique_id=2044673813]
+custom_minimum_size = Vector2(0, 27)
+custom_maximum_size = Vector2(-1, 27)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "HP"
+theme_override_font_sizes/font_size = 12
+theme_override_styles/background = SubResource("StyleBoxFlat_04x5q")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rtf75")
+value = 100.0
+
+[node name="dmgArea" type="Area3D" parent="." unique_id=287183057]
+
+[node name="dmgShape" type="CollisionShape3D" parent="dmgArea" unique_id=1466689518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31869853, 0)
+shape = SubResource("SphereShape3D_jpwbm")
+
+[node name="enemyShape" type="CollisionShape3D" parent="." unique_id=1245263493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31869853, 0)
+shape = SubResource("SphereShape3D_jpwbm")

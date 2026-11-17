@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bfm4tnj6c7onx"]
+
+[ext_resource type="Script" uid="uid://cuhasqigprcny" path="res://Characters/enemy/baddie_2.gd" id="1_gnm64"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pg56h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x28oc"]
+albedo_color = Color(0.99999994, 0.105594315, 0.4361306, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1sjpx"]
+material = SubResource("StandardMaterial3D_x28oc")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gnm64"]
+viewport_path = NodePath("EnemySprite3D/EnemySubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lb4v"]
+bg_color = Color(0.45622247, 0.032446247, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.17912039, 0.35513967, 0.17362723, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea5j6"]
+bg_color = Color(0.45490196, 0.03137255, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.18039216, 0.35686275, 0.17254902, 1)
+border_blend = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gnm64"]
+radius = 0.501
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3lb4v"]
+radius = 0.501
+
+[node name="enemy" type="CharacterBody3D" unique_id=382409571 node_paths=PackedStringArray("healthBarPC")]
+script = ExtResource("1_gnm64")
+healthBarPC = NodePath("EnemySprite3D/EnemySubViewport/EnemyHPbar")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=974517629]
+shape = SubResource("CapsuleShape3D_pg56h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1253962357]
+mesh = SubResource("CapsuleMesh_1sjpx")
+
+[node name="EnemySprite3D" type="Sprite3D" parent="." unique_id=130021032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1092438, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_gnm64")
+
+[node name="EnemySubViewport" type="SubViewport" parent="EnemySprite3D" unique_id=710277121]
+transparent_bg = true
+size = Vector2i(200, 20)
+render_target_update_mode = 4
+
+[node name="EnemyHPbar" type="ProgressBar" parent="EnemySprite3D/EnemySubViewport" unique_id=1997054179]
+custom_minimum_size = Vector2(0, 27)
+custom_maximum_size = Vector2(-1, 27)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "HP"
+theme_override_font_sizes/font_size = 12
+theme_override_styles/background = SubResource("StyleBoxFlat_3lb4v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ea5j6")
+value = 100.0
+
+[node name="dmgArea" type="Area3D" parent="." unique_id=2145173893]
+
+[node name="dmgShape" type="CollisionShape3D" parent="dmgArea" unique_id=585808837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31869853, 0)
+shape = SubResource("SphereShape3D_gnm64")
+
+[node name="enemyShape" type="CollisionShape3D" parent="." unique_id=697883753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31869853, 0)
+shape = SubResource("SphereShape3D_3lb4v")
+
+[node name="EnemyNavAgent" type="NavigationAgent3D" parent="." unique_id=236453956]
+unique_name_in_owner = true
+
+[node name="HeadVisionPoint" type="Node3D" parent="." unique_id=1449810318]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62563825, 0)

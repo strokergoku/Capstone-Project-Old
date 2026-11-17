@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bmis1lt70hgu8"]
+
+[ext_resource type="Texture2D" uid="uid://chfph7bnigrn" path="res://assets/3dAssetFiles/textures/door_heavy_metal_dif.png" id="1_wdoj8"]
+[ext_resource type="ArrayMesh" uid="uid://pxmnq2fgy3ey" path="res://assets/3dAssetFiles/more meshes/laboratory core/door_heavy_metal_door_heavy_metal.res" id="2_rxgr7"]
+[ext_resource type="ArrayMesh" uid="uid://cxesmdvrt8jvs" path="res://assets/3dAssetFiles/more meshes/laboratory core/door_heavy_metal_door_frame_metal.res" id="3_mp0mb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4gho"]
+albedo_texture = ExtResource("1_wdoj8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrb2k"]
+albedo_texture = ExtResource("1_wdoj8")
+
+[node name="HeavyMetalDoor" type="Node3D" unique_id=397677291]
+
+[node name="door" type="MeshInstance3D" parent="." unique_id=1814793128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07619178, 0.4)
+material_override = SubResource("StandardMaterial3D_f4gho")
+mesh = ExtResource("2_rxgr7")
+
+[node name="doorframe" type="MeshInstance3D" parent="." unique_id=1686378904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07619178, 0.4)
+material_override = SubResource("StandardMaterial3D_jrb2k")
+mesh = ExtResource("3_mp0mb")

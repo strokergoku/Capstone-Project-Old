@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://obeuip6jfurr"]
+
+[ext_resource type="Texture2D" uid="uid://d4duy24u7jg7e" path="res://trenchbroom/textures/test texture/LabTilesLessCracked.png" id="1_02cr3"]
+
+[resource]
+albedo_texture = ExtResource("1_02cr3")
+metallic_specular = 0.0
+texture_filter = 2

@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dtswcrgr5tlc"
+path="res://.godot/imported/pathfinding.map-b9b7b4ea9097fea91dff8ce69f8be713.tres"
+
+[deps]
+
+source_file="res://trenchbroom/tmaps/pathfinding.map"
+dest_files=["res://.godot/imported/pathfinding.map-b9b7b4ea9097fea91dff8ce69f8be713.tres"]
+
+[params]
+
